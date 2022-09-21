@@ -19,6 +19,7 @@ public Loans(int id, Utenti loanUtente, int ammontare, int rata)
         Rata = rata;
         StartDate = new DateOnly(2022, 1, 1);
         EndDate = StartDate.AddMonths((int)(Ammontare / rata) + 1);
+        LoanUtente = loanUtente;
         
     }
 

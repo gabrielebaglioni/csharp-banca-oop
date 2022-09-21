@@ -3,9 +3,15 @@ Console.WriteLine(banck.Name);
 
 
 
-Utenti client = new Utenti("Gabriele", "Baglioni", "BGLGRL00T05H501F");
+Utenti Gabriele = new Utenti("Gabriele", "Baglioni", "BGLGRL00T05H501F");
+banck.AddUtente(Gabriele);
 
-Console.WriteLine(client.ToString());
+Console.WriteLine(Gabriele.ToString());
+
+
+
+Loans loan1 = new Loans(1, Gabriele, 200, 20);
+banck.addUtenteLoan( loan1, Gabriele);
 
 
 
