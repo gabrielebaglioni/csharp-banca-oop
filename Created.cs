@@ -10,7 +10,13 @@ Console.WriteLine(client.ToString());
 
 
 
-Console.WriteLine("Inserisci il codice fiscale da cercare: ");
+//Console.WriteLine("Inserisci il codice fiscale da cercare: ");
+//List<Utenti> risultatoRicerca = banck.SearchUtente(Console.ReadLine());
 
 
-List<Utenti> risultatoRicerca = banck.SearchUtente(Console.ReadLine());
+
+
+Console.WriteLine("Inserisci il codice fiscale per vedere se c'e' un prestito collegato");
+List<Loans> loanInput = banck.SearchLoan(Console.ReadLine());
+
+

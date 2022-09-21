@@ -12,7 +12,7 @@ public class Banck
         Utenti client = new Utenti("Gabriele", "Baglioni", "BGLGRL00T05H501F");
         this.utenti = new List<Utenti> { client };
         loans = new List<Loans>();
-       
+
     }
 
     //Add
@@ -36,7 +36,7 @@ public class Banck
         //ritorna lista di clienti con quel nome e cognome
         foreach (Utenti utente in utenti)
         {
-            if (utente.CF.ToLower()  == utente.CF.ToLower())
+            if (utente.CF.ToLower() == utente.CF.ToLower())
             {
                 risultatoRicerca.Add(utente);
                 Console.WriteLine(utente.ToString());
@@ -66,5 +66,26 @@ public class Banck
     {
         loans.Add(loan);
         utente.Loan.Add(loan);
+    }
+    //findLoanByCF
+    public List<Loans> SearchLoan(string fiscalCode)
+    {
+        List<Loans> loans = new List<Loans>();
+        {
+            foreach (Loans loan in this.loans)
+            {
+                if (loan.LoanUtente.CF.Contains(fiscalCode))
+                {
+                    loans.Add((Loans)loan);
+                    Console.WriteLine("E' presente un prestito per il codice fiscale inserito, " +
+                        "l'ammontare del prestito è: " + loan.Ammontare + " euro");
+                }
+                else
+                {
+                    Console.WriteLine("Non è presente nessun prestito per il codice fiscale inserito");
+                }
+            }
+        }
+        return loans;
     }
 }

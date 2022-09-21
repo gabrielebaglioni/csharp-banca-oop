@@ -8,6 +8,7 @@ public class Loans
     public int Rata { set; get; }
     public DateOnly StartDate { get; }
     public DateOnly EndDate { get; private set; }
+    
 
 
 public Loans(int id, Utenti loanUtente, int ammontare, int rata)
@@ -18,6 +19,7 @@ public Loans(int id, Utenti loanUtente, int ammontare, int rata)
         Rata = rata;
         StartDate = new DateOnly(2022, 1, 1);
         EndDate = StartDate.AddMonths((int)(Ammontare / rata) + 1);
+        
     }
 
 
