@@ -10,6 +10,7 @@ public class Utenti
     public int Salary { get;  set; }
     public string CF { get; set; }
     public bool isRegistred { get; set; }
+    public List<Loans> Loan { get; }
 
 
     public Utenti(string name, string surname, string cf)
@@ -18,6 +19,7 @@ public class Utenti
         Surname = surname;
         Salary = GetSalary();
         CF = cf;
+        Loan = new List<Loans>();
     }
 
     public void SetSalary(int salary)

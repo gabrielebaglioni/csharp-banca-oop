@@ -61,4 +61,10 @@ public class Banck
             throw new Exception("User not found");
         }
     }
+    //prestito
+    public void addUtenteLoan(Loans loan, Utenti utente)
+    {
+        loans.Add(loan);
+        utente.Loan.Add(loan);
+    }
 }
