@@ -12,7 +12,24 @@ public class Banck
         Utenti client = new Utenti("Gabriele", "Baglioni", "BGLGRL00T05H501F");
         this.utenti = new List<Utenti> { client };
         loans = new List<Loans>();
+       
     }
+
+    //Add
+
+    public void AddUtente(Utenti utente)
+    {
+        utenti.Add(utente);
+        utente.isRegistred = true;
+    }
+    //remove
+    public void RemoveUtente(Utenti utente)
+    {
+        utenti.Remove(utente);
+        utente.isRegistred = false;
+    }
+
+    //SEARCH
     public List<Utenti> SearchUtente(string CF)
     {
         List<Utenti> risultatoRicerca = new List<Utenti>();
@@ -31,5 +48,17 @@ public class Banck
             }
         }
         return risultatoRicerca;
+    }
+    //edit
+    public void editUtente(Utenti user, int newSalary)
+    {
+        if (utenti.Contains(user))
+        {
+            user.Salary = newSalary;
+        }
+        else
+        {
+            throw new Exception("User not found");
+        }
     }
 }
